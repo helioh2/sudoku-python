@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 '''
 Created on 05/12/2014
 
@@ -22,8 +25,7 @@ def funcao_backtracking(x):
         
 '''
 
-
-''' Template para busca em profundidade 
+''' Template para busca em profundidade
     com backtracking (para varias solucoes)'''
 
 '''
