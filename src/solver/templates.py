@@ -46,3 +46,5 @@ for solucao in funcao_backtracking_gen():
     cont+=1
 '''
 
+
+def soma(a, b): return a + b

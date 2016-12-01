@@ -1,4 +1,25 @@
-''' 
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+'''Funcoes auxiliares:'''
+
+
+def print_matriz(m):
+    for l in range(len(m)):
+
+        for c in range(len(m[l])):
+            item = ""
+            if m[l][c] == None:
+                item += "B\t"
+            else:
+                item += str(m[l][c]) + "\t"
+            if c == len(m[l]) - 1:
+                item += "\n"
+            print item,
+
+
+'''
 SUDOKU - ANALISE DE DOMINIO
 
 Num tabuleiro de Sudoku, temos uma matriz 9x9
@@ -54,7 +75,7 @@ CAIXAS = [[(0,0),(0,1),(0,2),(1,0),(1,1),(1,2),(2,0),(2,1),(2,2)],
            ]
 
 UNIDADES = LINHAS + COLUNAS + CAIXAS
-
+print(UNIDADES)
 
 #Exemplos de tabuleiros
 
@@ -62,8 +83,11 @@ TODOS_VALORES = range(1,10)  # Naturais de 1 a 9
 B = None #valor nulo para facilitar os testes
 TAB_VAZIO = [[None for _ in range(9)] for _ in range(9)]
 
+
 TAB_L0_CHEIA = [TODOS_VALORES]+ [[None for _ in range(9)] for _ in range(8)]  #Matriz com primeira linha preenchida de 1 a 9
 TAB_C0_CHEIA = [[valor]+[None]*8 for valor in TODOS_VALORES] #Matriz com primeira coluna preenchida de 1 a 9
+
+# print_matriz(TAB_C0_CHEIA)
 
 TAB_FACIL= [[2, 7, 4, B, 9, 1, B, B, 5],
             [1, B, B, 5, B, B, B, 9, B],
@@ -137,7 +161,7 @@ TAB_MAIS_DIFICIL_DO_MUNDO = [[B, B, 5, 3, B, B, B, B, B],
 
 TAB_IMPOSSIVEL = [range(1,9)+[None]]+\
                     [[None]*8 + [valor] for valor in range(2,10)] #sem solucao, visualize dando um print nela
-
+# print_matriz(TAB_IMPOSSIVEL)
 
 TAB_INVALIDA1 = [[2, 7, 4, 2, 9, 1, B, B, 5],
                 [1, B, B, 5, B, B, B, 9, B],
@@ -161,19 +185,5 @@ TAB_MAIS_DIFICIL2 = [[8, B, B, B, B, B, B, B, B],
                     [B, 9, B, B, B, B, 4, B, B]]
 
 
-'''Funcoes auxiliares:'''
 
-def print_matriz(m):
-    for l in range(len(m)):
-       
-        for c in range(len(m[l])):
-            item = ""
-            if m[l][c] == None:
-                item += "B\t"
-            else:
-                item += str(m[l][c]) +"\t"
-            if c == len(m[l]) - 1:
-                item += "\n"              
-            print item,
-                
-print_matriz(TAB_DIFICIL)
+# print_matriz(TAB_DIFICIL)
